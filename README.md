@@ -90,6 +90,26 @@ It is up to you to decide on what model to use for the application. You need to 
 Note that you may need to do additional processing of the output to handle incorrect detections, such as adjusting confidence threshold or accounting for 1-2 frames where the model fails to see a person already counted and would otherwise double count.
 
 **If you are otherwise unable to find a suitable model after attempting and successfully converting at least three other models**, you can document in your write-up what the models were, how you converted them, and why they failed, and then utilize any of the Intel® Pre-Trained Models that may perform better.
+Downloading the model from the GitHub repository of Tensorflow Object Detection Model Zoo by the following command:
+
+```
+wget http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz
+```
+Extracting the tar.gz file by the following command:
+
+```
+tar -xvf faster_rcnn_inception_v2_coco_2018_01_28.tar.gz
+```
+Changing the directory to the extracted folder of the downloaded model:
+
+```
+cd faster_rcnn_inception_v2_coco_2018_01_28
+```
+ to Intermediate Representation (IR) or OpenVINO IR format. The command used is given below:
+
+```
+python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/faster_rcnn_support.json
+```
 
 ## Run the application
 
