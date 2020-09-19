@@ -1,8 +1,25 @@
 # Project Write-Up
 
-You can use this document as a template for providing your project write-up. However, if you
-have a different format you prefer, feel free to use it as long as you answer all required
-questions.
+after reseaching and applying different methods.
+the model cant be from INTEL models, my choice was to get the model from Tensorflow, then do the model optimizer process in order to make it  Intermediate Representation (IR) to fit the format of openvino.
+the final model been used in this project is : faster_rcnn_inception_v2_coco_2018_01_28
+## the process of model optimizer is here
+*download link is here for the model
+```
+wget
+http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz
+```
+* Extracting the tar.gz and then cd to the file of the model
+```
+tar -xvf faster_rcnn_inception_v2_coco_2018_01_28.tar.gz
+```
+```
+cd faster_rcnn_inception_v2_coco_2018_01_28
+```
+*the command line for converting to (IR)
+```
+python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/faster_rcnn_support.json
+```
 
 ## Explaining Custom Layers
 
