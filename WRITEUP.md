@@ -46,11 +46,15 @@ CHECK THE LINK FOR MORE : (https://docs.openvinotoolkit.org/2019_R3/_docs_MO_DG_
 My method(s) to compare models before and after conversion to Intermediate Representations
 were...
 
-The difference between model accuracy pre- and post-conversion was...
+The difference between model accuracy pre- and post-conversion was:pre- was higher than the model
+The size of the model pre- and post-conversion was: post-conversion to (IR) was smaller than the model pre-conversion
+The inference time of the model pre- and post-conversion was: pre-conversion longer time comparing to post-conversion
 
-The size of the model pre- and post-conversion was...
-
-The inference time of the model pre- and post-conversion was...
+| Model/Framework                             | Latency (microseconds)            | Memory (Mb) |
+| -----------------------------------         |:---------------------------------:| -------:|
+| ssd_inception_v2_coco (plain TF)            | 229                               | 538    |
+| faster_rcnn_inception_v2_coco (plain TF)     | 1279                             | 562  
+| faster_rcnn_inception_v2_coco (OpenVINO)    | 891                              | 281    |
 
 
 ## Assess Model Use Cases
