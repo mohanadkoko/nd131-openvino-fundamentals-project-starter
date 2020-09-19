@@ -202,4 +202,8 @@ MQTT_SERVER: "ws://localhost:3002"
 ```
 
 ## screenshot of the app
-![people-counter-python](./images/people-counter-image.png)
+![people-counter-python](./images/people detected.PNG)
+![people-counter-python](./images/screen shout wokspace.PNG)
+![people-counter-python](./images/counted1.PNG)
+
+
