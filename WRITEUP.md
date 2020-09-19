@@ -51,13 +51,11 @@ checking the Latency (microseconds) and Memory (Mb)
 The difference between model accuracy pre- and post-conversion was:pre- was higher than the model
 The size of the model pre- and post-conversion was: post-conversion to (IR) was smaller than the model pre-conversion
 The inference time of the model pre- and post-conversion was: pre-conversion longer time comparing to post-conversion
-
 | Model/Framework                             | Latency (microseconds)            | Memory (Mb) |
 | -----------------------------------         |:---------------------------------:| -------:|
-| ssd_mobilenet_v2_coco_2018_03_29 ( plain TF)   | 315                              | 450    |
-
-| ssd_inception_v2_coco (plain TF)            | 229                               | 538    |
-| faster_rcnn_inception_v2_coco (plain TF)     | 1279                             | 562  
+| ssd_mobilenet_v2_coco_2018_03_29           | 451                              | 387    |
+| Faster_rcnn_inception_v2_coco_2018_01_28    | 1279                              | 562    |
+| faster_rcnn_inception_v2_coco from OpenVINO    | 891                              | 281    |
 as its clear after using these models there is change and different in term of decreasing in the latency.
 
 ## Assess Model Use Cases
