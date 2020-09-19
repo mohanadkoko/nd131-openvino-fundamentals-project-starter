@@ -200,3 +200,6 @@ CAMERA_FEED_SERVER: "http://localhost:3004"
 ...
 MQTT_SERVER: "ws://localhost:3002"
 ```
+
+## screenshot of the app
+![people-counter-python](./images/people-counter-image.png)
