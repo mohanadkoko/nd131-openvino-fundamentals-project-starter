@@ -108,17 +108,20 @@ In investigating potential people counter models, I tried each of the following 
   - I converted the model to an Intermediate Representation with the following arguments:
   
     - ```tar -xvf ssd_mobilenet_v2_coco_2018_03_29.tar.gz```
-    - ```cd ssd_mobilenet_v2_coco_2018_03_29.tar.gz```
+    - ```cd ssd_mobilenet_v2_coco_2018_03_29```
     - ```python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json```
     
   - the counted numbers in the model cant be fixed to the person to detect - the app works only yo detect the person in the fist frame and when it move only - the result is not accurate as the total people counted is 33
   - I tried to improve it by cutting layers but didnt work
 
-- Model 3: [Name]
-  - [Model Source]
-  - I converted the model to an Intermediate Representation with the following arguments...
-  - The model was insufficient for the app because...
-  - I tried to improve the model for the app by...
+- Model 3: [ssd_inception_v2_coco_2018_01_28]
+  - [http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz]
+  - I converted the model to an Intermediate Representation with the following arguments:
+      - ```tar -xvf ssd_inception_v2_coco_2018_01_28.tar.gz```
+    - ```cd ssd_inception_v2_coco_2018_01_28```
+    - ```python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config -- reverse_input_channels --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json```
+  - The model was insufficient for the app because it fsiled to detect the people in the frame
+  - I didnt try to improve it as it didnt give the needed output at the first to enhance it
   --------------------------------------
  
  ## extra written space 
