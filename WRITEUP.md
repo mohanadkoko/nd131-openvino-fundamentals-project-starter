@@ -23,9 +23,23 @@ python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model 
 
 ## Explaining Custom Layers
 
-The process behind converting custom layers involves...
+The process behind converting custom layers involves comparing the frameworks like tensorflow, caffee and others.
 
-Some of the potential reasons for handling custom layers are...
+In tensorflow : 
+- First step_ register the Custom layers as extensions for model optimizer 
+- Second step_ replace all unsupported subgraph with different subgraph, which will offload the computation of the subgraph in inference.
+
+for other frameworks like Caffee:
+- First step_ register the Custom layers as extensions for model optimizer ( same as Tensorflow)
+- Second step_ register the layers as custom then calculate the output shape of the layer by using caffee seteps.
+
+Some of the potential reasons for handling custom layers are:
+- Optimize our pre-trained models and convert them to (IR) without lossing the accuracy
+- Shrik and speed up the performace of the (IR)
+- In case of not supported layers the Model Optimizer automatically classifies as supported custom layer
+- To play the code without ERROR Flag of  unsupported layer from the inference engine
+
+CHECK THE LINK FOR MORE : (https://docs.openvinotoolkit.org/2019_R3/_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer.html)
 
 ## Comparing Model Performance
 
@@ -38,16 +52,27 @@ The size of the model pre- and post-conversion was...
 
 The inference time of the model pre- and post-conversion was...
 
+
 ## Assess Model Use Cases
 
-Some of the potential use cases of the people counter app are...
+Some of the potential use cases of the people counter app are:
+- This modle will help in cutomer journey follow inside retails
+- Managing the footfall inside malls 
+- Analyis the people duration in key touch points like front-office in stadiums,meusums and others
+-Many other places to be use in like banks,libraries, resturants, and others 
 
-Each of these use cases would be useful because...
+Each of these use cases would be useful because:
+- We will have a good visual and controll of the people moving inside spaces 
+- We will have initial data to improve the cutomer flow and benifit the business owners to make valiable decisions.
+
 
 ## Assess Effects on End User Needs
 
 Lighting, model accuracy, and camera focal length/image size have different effects on a
-deployed edge model. The potential effects of each of these are as follows...
+deployed edge model. The potential effects of each of these are as follows:
+- the needed accurate result needed to be taken from cheking various models and their output accuracy.
+-the length/image size has an effect on the reading, as good size and quality will get good detection and fast response of the app during the detection period needed
+- edge application need good pre-implementation process on term of choosing the right focal in camera nad the angle used as this will have impact of easier mass application in industrial or public use.
 
 ## Model Research
 
