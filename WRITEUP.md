@@ -43,8 +43,10 @@ CHECK THE LINK FOR MORE : (https://docs.openvinotoolkit.org/2019_R3/_docs_MO_DG_
 
 ## Comparing Model Performance
 
+The final model used in this project is **Faster_rcnn_inception_v2_coco_2018_01_28**
 My method(s) to compare models before and after conversion to Intermediate Representations
-were...
+were:
+checking the Latency (microseconds) and Memory (Mb)
 
 The difference between model accuracy pre- and post-conversion was:pre- was higher than the model
 The size of the model pre- and post-conversion was: post-conversion to (IR) was smaller than the model pre-conversion
@@ -52,10 +54,11 @@ The inference time of the model pre- and post-conversion was: pre-conversion lon
 
 | Model/Framework                             | Latency (microseconds)            | Memory (Mb) |
 | -----------------------------------         |:---------------------------------:| -------:|
+| ssd_mobilenet_v2_coco_2018_03_29 ( plain TF)   | 315                              | 450    |
+
 | ssd_inception_v2_coco (plain TF)            | 229                               | 538    |
 | faster_rcnn_inception_v2_coco (plain TF)     | 1279                             | 562  
-| faster_rcnn_inception_v2_coco (OpenVINO)    | 891                              | 281    |
-
+as its clear after using these models there is change and different in term of decreasing in the latency.
 
 ## Assess Model Use Cases
 
