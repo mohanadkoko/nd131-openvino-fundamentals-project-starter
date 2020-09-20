@@ -108,3 +108,5 @@ def is_all_layers_supported(engine, network, console_output=False):
             all_supported = False
 
     return all_supported
+   
+   ###all the work needed to be done for the inference is here
