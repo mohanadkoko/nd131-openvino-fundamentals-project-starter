@@ -75,7 +75,10 @@ Some of the potential use cases of the people counter app are:
 Each of these use cases would be useful because:
 - We will have a good visual and controll of the people moving inside spaces 
 - We will have initial data to improve the cutomer flow and benifit the business owners to make valiable decisions.
+
 Details exampleS implementation:
+--  in case of using in a public area with the help of adding another model like poster estimation direction, we can collect data of people stopping and looking to a certain area or stopping in front of ads, using the analyzed data we can benefit the retails area of what people were interested in during their visit to this locations 
+-- - In using this type of app in *stadiums: the app can have stream live video from key touchpoints around the stadiums like the ticketing area and food and beverages line for ordering, the app will calculate the duration of each user according to the data taken and from that data, we can have full strategy analysis system to enhance future improvements in the stadium 
 
 
 ## Assess Effects on End User Needs
