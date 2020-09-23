@@ -64,6 +64,8 @@ The inference time of the model pre- and post-conversion was: pre-conversion lon
 
 * Its clear after using these models there is change and different in term of decreasing in the latency.
 
+* Model inference time
+ In the main function,the accuracy and speed how to design and display on UI to compare between
 ## Assess Model Use Cases
 
 Some of the potential use cases of the people counter app are:
