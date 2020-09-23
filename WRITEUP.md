@@ -76,9 +76,9 @@ Each of these use cases would be useful because:
 - We will have a good visual and controll of the people moving inside spaces 
 - We will have initial data to improve the cutomer flow and benifit the business owners to make valiable decisions.
 
-Details exampleS implementation:
---  in case of using in a public area with the help of adding another model like poster estimation direction, we can collect data of people stopping and looking to a certain area or stopping in front of ads, using the analyzed data we can benefit the retails area of what people were interested in during their visit to this locations 
--- - In using this type of app in *stadiums: the app can have stream live video from key touchpoints around the stadiums like the ticketing area and food and beverages line for ordering, the app will calculate the duration of each user according to the data taken and from that data, we can have full strategy analysis system to enhance future improvements in the stadium 
+Details examples implementation:
+- In case of using in a public area with the help of adding another model like poster estimation direction, we can collect data of people stopping and looking to a certain area or stopping in front of ads, using the analyzed data we can benefit the retails area of what people were interested in during their visit to this locations 
+- In using this type of app in *stadiums: the app can have stream live video from key touchpoints around the stadiums like the ticketing area and food and beverages line for ordering, the app will calculate the duration of each user according to the data taken and from that data, we can have full strategy analysis system to enhance future improvements in the stadium 
 
 
 ## Assess Effects on End User Needs
@@ -126,6 +126,9 @@ In investigating potential people counter models, I tried each of the following 
     - ```python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config -- reverse_input_channels --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json```
   - The model was insufficient for the app because it fsiled to detect the people in the frame
   - I didnt try to improve it as it didnt give the needed output at the first to enhance it
+  
+  According to udaicty Reviewer he give me this : tips:You can add person-detection-retail-0013 - FP16 and FP32 to test the final accurate result.
+  after testing the given recommanded model the result is like magic, perfect and smooth detection and good performance in term of calculations and desired output.
   --------------------------------------
  
 
