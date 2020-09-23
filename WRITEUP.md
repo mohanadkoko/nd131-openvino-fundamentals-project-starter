@@ -75,6 +75,7 @@ Some of the potential use cases of the people counter app are:
 Each of these use cases would be useful because:
 - We will have a good visual and controll of the people moving inside spaces 
 - We will have initial data to improve the cutomer flow and benifit the business owners to make valiable decisions.
+Details exampleS implementation:
 
 
 ## Assess Effects on End User Needs
