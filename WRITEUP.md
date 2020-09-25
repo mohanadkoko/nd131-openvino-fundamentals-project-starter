@@ -142,7 +142,8 @@ In investigating potential people counter models, I tried each of the following 
   According to udaicty Reviewer he give me this : tips:You can add person-detection-retail-0013 - FP16 and FP32 to test the final accurate result.
   after testing the given recommanded model the result is like magic, perfect and smooth detection and good performance in term of calculations and desired output.
   --------------------------------------
- 
+## screenshot of the app
+![people-counter-python](./images/final_durarion.png)
 ## screenshot of the app
 ![people-counter-python](./images/people_detected.PNG)
 ## screenshot of the app 2
