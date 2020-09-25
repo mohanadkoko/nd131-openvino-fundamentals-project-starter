@@ -68,13 +68,13 @@ The inference time of the model pre- and post-conversion was: pre-conversion lon
  In the main function,my method in comparing the performance of models using accuracy and speed along with checking the **inference time*
  in the code I have implement to check time.time() during inference request to compare the models.
 
- *the output of inference time in terminal
+ *the output of inference time in terminal for faster_rcnn_inception_v2_coco_2018_01_28
  ![people-counter-python](./images/inference_time_fcc.PNG)
  
  *app duration app
  ![people-counter-python](./images/duration2.PNG)
  
- *app duration app
+ *app duration app using faster_rcnn_inception_v2_coco_2018_01_28
  ![people-counter-python](./images/coding.PNG)
 ## Assess Model Use Cases
 
