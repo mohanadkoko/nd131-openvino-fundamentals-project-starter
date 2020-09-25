@@ -75,7 +75,7 @@ The inference time of the model pre- and post-conversion was: pre-conversion lon
  ![people-counter-python](./images/duration2.PNG)
  
  *app duration app
- ![people-counter-python](./images/infernec_request time_check.PNG)
+ ![people-counter-python](./images/coding.PNG)
 ## Assess Model Use Cases
 
 Some of the potential use cases of the people counter app are:
