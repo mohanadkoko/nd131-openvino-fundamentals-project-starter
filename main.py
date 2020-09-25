@@ -19,12 +19,12 @@
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
-""""
+"""
 auther is : mohanad koko
 country : saudi arabia
 date : 19/9/2020
 mohanadkoko92@gmail.com
-""""
+"""
 
 import os
 import sys
