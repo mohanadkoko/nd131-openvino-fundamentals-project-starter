@@ -18,12 +18,10 @@
  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
-
 """
-auther is : mohanad koko
+auther : mohanad koko
 country : saudi arabia
-date : 19/9/2020
-mohanadkoko92@gmail.com
+email : mohanadkoko92@gmail.com
 """
 
 import os
@@ -70,6 +68,8 @@ def build_argparser():
     parser.add_argument("-pt", "--prob_threshold", type=float, default=0.5,
                         help="Probability threshold for detections filtering"
                         "(0.5 by default)")
+    parser.add_argument("-pc", "--perf_counts", type=str, default=False,
+                        help="Print performance counters")
     return parser
 
 
@@ -78,6 +78,25 @@ def connect_mqtt():
     client = mqtt.Client()
     client.connect(MQTT_HOST, MQTT_PORT, MQTT_KEEPALIVE_INTERVAL)
     return client
+
+
+def performance_counts(perf_count):
+    """
+    print layer model info
+    """
+    print("{:<70} {:<15} {:<15} {:<15} {:<10}".format('name', 'layer_type',
+                                                      'exec_type', 'status',
+                                                      'real_time, us'))
+    for layer, stats in perf_count.items():
+        print("{:<70} {:<15} {:<15} {:<15} {:<10}".format(layer,
+                                                          stats['layer_type'],
+                                                          stats['exec_type'],
+                                                          stats['status'],
+                                                          stats['real_time']))
+  
+
+        
+        
 
 
 def infer_on_stream(args, client):
@@ -154,14 +173,16 @@ def infer_on_stream(args, client):
         net_input = {'image_tensor': image_p,'image_info': image_p.shape[1:]}
         duration_report = None
         infer_network.exec_net(net_input, request_id)
+        inf_start = time.time()
 
         ### TODO: Wait for the result ###
         if infer_network.wait() == 0:
 
             ### TODO: Get the results of the inference request ###
+            det_time = time.time() - inf_start
             net_output = infer_network.get_output()
             ### TODO: Extract any desired stats from the results ###
-         
+            
             pointer = 0
             probs = net_output[0, 0, :, 2]
             for i, p in enumerate(probs):
@@ -190,13 +211,15 @@ def infer_on_stream(args, client):
                     elif dur == 3 and counter < counter_prev:
                         #changed from (duration_prev / 10.0)*1000 to normal
                         duration_report = int(duration_prev)
+    
             ### TODO: Calculate and send relevant information on ###
             ### current_count, total_count and duration to the MQTT server ###
             ### Topic "person": keys of "count" and "total" ###
             ### Topic "person/duration": key of "duration" ###
+        
             client.publish('person',
                            payload=json.dumps({
-                               'count': report, 'total': counter_total}),
+                               'count': report, 'total': counter_total,'inferenc':det_time}),
                            qos=0, retain=False)
             if duration_report is not None:
                 client.publish('person/duration',
@@ -229,3 +252,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    exit(0)
