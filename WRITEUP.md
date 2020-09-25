@@ -65,8 +65,8 @@ The inference time of the model pre- and post-conversion was: pre-conversion lon
 * Its clear after using these models there is change and different in term of decreasing in the latency.
 
 * Model inference time
- In the main function,the accuracy and speed was tested along with checking the **inference tim**
- in the code o have implement to check time.time() during inference request to compare the models.
+ In the main function,my method in comparing the performance of models using accuracy and speed along with checking the **inference time*
+ in the code I have implement to check time.time() during inference request to compare the models.
 
  *the output of inference time in terminal
  ![people-counter-python](./images/inference_time_fcc.PNG)
