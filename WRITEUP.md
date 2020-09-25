@@ -68,7 +68,9 @@ The inference time of the model pre- and post-conversion was: pre-conversion lon
  In the main function,the accuracy and speed was tested along with checking the **inference tim**
  in the code o have implement to check time.time() during inference request to compare the models.
  *the code for checking timing 
+ ![people-counter-python](./images/infernec_request time_check.PNG)
  *the output of inference time in terminal
+ ![people-counter-python](./images/inference_time_fcc.PNG)
 ## Assess Model Use Cases
 
 Some of the potential use cases of the people counter app are:
@@ -136,5 +138,11 @@ In investigating potential people counter models, I tried each of the following 
   after testing the given recommanded model the result is like magic, perfect and smooth detection and good performance in term of calculations and desired output.
   --------------------------------------
  
+## screenshot of the app
+![people-counter-python](./images/people_detected.PNG)
+## screenshot of the app 2
+![people-counter-python](./images/warkspace.PNG)
+## screenshot of the app 3
+![people-counter-python](./images/counted1.PNG)
 
 
